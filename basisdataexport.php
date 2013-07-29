@@ -237,8 +237,8 @@ echo '</tbody></table><hr />';
 	<tbody>
 <?php
 	for ($i=0; $i< count($bodystates); $i++) {
-		echo '<tr><td>' . strftime("%Y-%m-%d %T", $bodystates[$i][0]) . '</td>';
-		echo '<td>' . strftime("%Y-%m-%d %T", $bodystates[$i][1]) . '</td>';
+		echo '<tr><td>' . strftime("%Y-%m-%d %H:%M:%S", $bodystates[$i][0]) . '</td>';
+		echo '<td>' . strftime("%Y-%m-%d %H:%M:%S", $bodystates[$i][1]) . '</td>';
 		echo '<td>' . $bodystates[$i][2] . '</td></tr>';
 	}
 ?>
@@ -264,7 +264,7 @@ echo '</tbody></table><hr />';
 // Format and echo data to browser
 for ($i=0; $i<count($heartrates); $i++) {
 	// HH:MM:SS timestamp
-	$timestamp = strftime("%Y-%m-%d %T", mktime(0, 0, $i*$import_interval, date("n", $report_date), date("j", $report_date), date("Y", $report_date)));
+	$timestamp = strftime("%Y-%m-%d %H:%M:%S", mktime(0, 0, $i*$import_interval, date("n", $report_date), date("j", $report_date), date("Y", $report_date)));
 
 	echo '<tr>';
 	echo '<td>' . $timestamp . '</td>';
